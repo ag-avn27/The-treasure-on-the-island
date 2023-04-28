@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Scene </title>
+</head>
+<style>
+
+  body { 
+    background-image: url(KpZPAY.webp);
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#first{
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+}
+
+.speak-button {
+  margin-left: 7%;
+  background-color: #409043;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  transform: translateX(-50%);
+  border: 2px solid #ffffff;
+}
+
+.speak-button:hover {
+  background-color: #205d23;
+}
+
+#text-to-read{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+#text-to-read p{
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button {
+  background-color: #dbe64f; 
+  color: black; 
+  padding: 20px 40px; 
+  border: none; 
+  border-radius: 4px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  border: 3px solid black;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #adb16d; 
+  color: #ffffff;
+  border:3px solid #ffffff;
+}
+
+#place{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 7%;
+}
+
+#place button{
+  margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  #first {
+    margin-top: 30%;
+  }
+
+  #text-to-read {
+    margin-top: 15%;
+  }
+
+  #place {
+    margin-top: 10%;
+  }
+}
+
+</style>
+
+</style>
+<body>  
+    <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <audio id="bg-audio" src="Waterfall audio.wav" autoplay></audio>
+  <div id="first"><button class="speak-button" onclick="speak()">Read for me</button></div>
+  <div id="text-to-read"><p>As you make your way, you came<br> across a river, You can either <br>cross the river or follow the river, <br>What will you do? </p></div>
+  <div id="place"><button id="option1" onclick="location.href='./Choice a.html'">Cross the river</button>
+<button id="option2" onclick="location.href='./Choice b.html'">Follow the river</button></div>
+  </body>
+
+<script>
+      function speak() {
+  
+  const textToRead = document.getElementById("text-to-read").textContent;
+  const utterance = new SpeechSynthesisUtterance(textToRead);
+  utterance.voice = speechSynthesis.getVoices()[0];
+
+  speechSynthesis.speak(utterance);
+}
+      const option1Button = document.getElementById("option1");
+      const option2Button = document.getElementById("option2");
+      const popup = document.getElementById("popup");
+
+      option1Button.addEventListener("click", function() {
+
+            document.getElementById("bg-audio").pause();
+        });
+
+        option2Button.addEventListener("click", function() {
+            window.open("./index.html", "_blank");
+            document.getElementById("bg-audio").pause();
+        });
+
+    </script>
+</body>
+</html>

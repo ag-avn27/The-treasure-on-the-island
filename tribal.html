@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title> Tribal</title>
+</head>
+<style>
+    h1{ 
+        color: white;
+    }
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url(tribe.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        background-attachment: fixed;
+        background-position: center;
+        padding: 0;
+        align-items: center;
+        align-self: center;
+        justify-self: center;
+    }
+    #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        max-width: 800px;
+        max-height: 600px;
+        z-index: 999;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    #popup img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+
+    button {
+        background-color: #dbe64f; 
+        padding: 10px 20px;
+        border-radius: 4px; 
+        font-size: 16px; 
+        cursor: pointer; 
+        border: 3px solid black;
+        border-radius: 20px;
+        text-decoration: none;
+    }
+
+    button:hover {
+        background-color: #adb16d; 
+        color: #ffffff;
+        border:3px solid #ffffff;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    #centered-text {
+        display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 24px;
+  max-width: 500px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  align-self: center;
+      }
+
+      .main{
+        align-self: center;
+        justify-self: center;
+      }
+
+ @media only screen and (max-width: 768px) {
+        #popup {
+            width: 90%;
+            height: 70%;
+        }
+        .main {
+            max-width: 90%;
+        }
+        #centered-text {
+            font-size: 20px;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        #popup {
+            width: 90%;
+            height: 50%;
+        }
+        .main {
+            max-width: 90%;
+        }
+        #centered-text {
+            font-size: 18px;
+        }
+        button {
+            font-size: 14px;
+        }
+    }
+
+
+</style>
+<body>
+    <div class="main">
+    <div id="centered-text">
+    <p> you decided to take the treasure for yourself, now you have to fight off the angry tribe members who see you as a thief, if you won will find the lost treasure, so don't loose
+    </p></div>
+    <div class="button-container">
+        <button id="option1"> You Won </button>
+        <button id="option2" onclick="location.href='./index.html'"> You Lost </button>
+    </div>
+</div>
+    <div id="popup">
+        <img src="cave.jpg">
+        <h1>Congrats, here is your lost Treasure</h1>
+    </div>
+    <audio id="sound" src="fireworks.mp3"></audio>
+</body>
+<script>
+var button = document.getElementById("option1");
+button.addEventListener("click", function() {
+    var body = document.getElementsByTagName("body")[0];
+    document.body.style.backgroundImage = "url(popup.jpg)";
+    var popup = document.getElementById("popup");
+    var sound = document.getElementById("sound");
+    sound.play();
+    popup.style.display = "block";
+    document.getElementsByTagName("p")[0].style.display = "none";
+    button.style.display = "none";
+    document.getElementById("option2").style.display = "none";
+});
+</script>
+</html>

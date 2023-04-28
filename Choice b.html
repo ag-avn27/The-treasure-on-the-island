@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title> Choice b </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+     h1{ 
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+    body {
+        background-image: url(Water.avif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        background-attachment: fixed;
+        background-position: center;
+        padding: 0;
+    }
+    #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        max-width: 800px;
+        max-height: 600px;
+        z-index: 999;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    #popup img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    #myButton {
+        display: flex;
+        margin-top: 40vh;
+        padding: 5px 20px;
+        background-color: #5d573e;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #myButton i {
+        color: white;
+        font-size: 24px;
+    }
+    p {
+        position: fixed;
+        align-items: center;
+        color: white;
+        transform: translate(-50%, -50%); 
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-left: 80%;
+        margin-top: 5%;
+    }
+
+
+</style>
+<body>
+    <p>You come across a water, If you decide to climb the waterfall, you'll have to be careful not to slip on the rocks. As you reach the top, you see that the cave is filled with gold and precious jewels, key is here only search it carefully </p>
+    <button id="myButton"><i class="fa fa-key"></i></button>
+    <div id="popup">
+        <img src="cave.jpg">
+        <h1>Congrats, here is your lost Treasure</h1>
+    </div>
+    <audio id="sound" src="fireworks.mp3"></audio>
+</body>
+<script>
+var button = document.getElementById("myButton");
+button.addEventListener("click", function() {
+    var body = document.getElementsByTagName("body")[0];
+    document.body.style.backgroundImage = "url(popup.jpg)";
+    var popup = document.getElementById("popup");
+    var sound = document.getElementById("sound");
+    sound.play();
+    popup.style.display = "block";
+    document.getElementsByTagName("p")[0].style.display = "none";
+    document.getElementById("myButton").style.display = "none";
+});
+</script>
+</html>

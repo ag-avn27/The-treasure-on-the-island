@@ -1,0 +1,75 @@
+body {
+  background-image: url(1.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+}
+
+#heading {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+}
+
+#heading h1{
+    text-align: center;
+    color: white;
+}
+
+/* Center the button horizontally and vertically *
+
+/* Style the button */
+.btn-bot {
+  background-color: #409043; /* Green */
+  border: none;
+  color: white;
+  padding: 7px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid #ffffff;
+  width: 20%; /* Change width to a percentage value */
+  position: fixed;
+}
+
+/* Add a hover effect to the button */
+.btn-bot:hover {
+  background-color: #205d23;
+}
+
+/* Media queries */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: xx-large;
+    text-align: center;
+  }
+
+  .btn-bot {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: xx-large;
+    text-align: center;
+  }
+
+  .btn-bot {
+    font-size: 12px;
+    padding: 8px 16px;
+    width: 0%; /* Adjust button width for smaller screens */
+  }
+}
+ 
